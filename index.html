@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giulia — Handmade Bag Charms from Amsterdam</title>
+  <meta name="description" content="Handgemaakte bag charms uit Amsterdam. Speels, stijlvol en met liefde gemaakt door Giulia." />
+  <meta property="og:title" content="Giulia — Handmade Bag Charms from Amsterdam" />
+  <meta property="og:description" content="Zelfgemaakte bag charms uit Amsterdam — uniek, vrolijk en met de hand gemaakt." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#f7d7da" />
+  <style>
+    :root {
+      --bg: #fffaf8;
+      --paper: rgba(255,255,255,0.72);
+      --text: #2f2330;
+      --muted: #6d5b69;
+      --accent: #d95f8d;
+      --accent-dark: #b63d6b;
+      --gold: #c89b3c;
+      --line: rgba(47,35,48,0.1);
+      --shadow: 0 20px 60px rgba(93, 42, 74, 0.14);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 214, 222, 0.9), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 237, 200, 0.7), transparent 24%),
+        linear-gradient(180deg, #fff8f6 0%, #fffdfa 50%, #fff8f4 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 22px 0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 250, 248, 0.65);
+      border-bottom: 1px solid rgba(47,35,48,0.05);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ffd7e3, #ffe9bb);
+      box-shadow: var(--shadow);
+      font-size: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(217,95,141,0.14);
+      color: var(--accent-dark);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f08cae);
+      color: white;
+      box-shadow: 0 16px 34px rgba(217,95,141,0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.78);
+      border-color: rgba(47,35,48,0.08);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: var(--paper);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: var(--shadow);
+      border-radius: 34px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .charm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .charm {
+      aspect-ratio: 1 / 1.08;
+      border-radius: 26px;
+      padding: 18px;
+      display: flex;
+      align-items: end;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      min-height: 180px;
+      box-shadow: inset 0 -80px 120px rgba(0,0,0,0.15);
+    }
+
+    .c1 { background: linear-gradient(160deg, #ffb0c9, #d95f8d); }
+    .c2 { background: linear-gradient(160deg, #ffd58c, #c89b3c); }
+    .c3 { background: linear-gradient(160deg, #d9c7ff, #9671db); }
+    .c4 { background: linear-gradient(160deg, #9de7d5, #3aa58b); }
+
+    section { padding: 28px 0; }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: -0.03em;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 68ch;
+    }
+
+    .features, .steps, .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(47,35,48,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 12px 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .eyebrow {
+      color: var(--accent-dark);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+    }
+
+    .product-price {
+      margin-top: 18px;
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-top: 12px;
+    }
+
+    .photo {
+      min-height: 320px;
+      border-radius: 32px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.12)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Crect width='800' height='800' fill='%23f8d4dd'/%3E%3Ccircle cx='260' cy='250' r='120' fill='%23f2b6c8'/%3E%3Ccircle cx='530' cy='290' r='150' fill='%23ffdba2'/%3E%3Ccircle cx='420' cy='520' r='180' fill='%23e7d9ff'/%3E%3Cpath d='M180 460c70-70 140-50 210 10s120 90 220 10' stroke='%23ffffff' stroke-opacity='.55' stroke-width='18' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .contact {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    footer {
+      padding: 36px 0 60px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tiny {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero, .about, .contact, .features, .steps, .products {
+        grid-template-columns: 1fr;
+      }
+      .nav-links { display: none; }
+      h1 { max-width: 9ch; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="brand">
+        <div class="brand-mark">✦</div>
+        <div>Giulia Charms</div>
+      </a>
+      <nav class="nav-links">
+        <a href="#collectie">Collectie</a>
+        <a href="#over">Over</a>
+        <a href="#bestellen">Bestellen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div>
+        <div class="badge">Handmade in Amsterdam · kleine series · uniek gemaakt</div>
+        <h1>Bag charms met karakter.</h1>
+        <p class="lead">
+          Giulia maakt super mooie, handgemaakte bag charms in Amsterdam — speels, stijlvol en nét opvallend genoeg om je tas een eigen persoonlijkheid te geven.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#bestellen">Bestel een charm</a>
+          <a class="btn btn-secondary" href="#collectie">Bekijk de collectie</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="charm-grid">
+          <div class="charm c1">Cherry Pop</div>
+          <div class="charm c2">Golden Bloom</div>
+          <div class="charm c3">Lilac Dream</div>
+          <div class="charm c4">Mint Spark</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collectie">
+      <div class="eyebrow">Collectie</div>
+      <h2 class="section-title">Kleine kunstwerkjes voor aan je tas</h2>
+      <p class="section-copy">
+        Elke charm wordt met de hand samengesteld. Daardoor voelt ieder stuk persoonlijk: licht speels, een beetje chic, en gemaakt om je everyday bag nét dat extra te geven.
+      </p>
+
+      <div class="products">
+        <article class="card">
+          <div class="eyebrow">Signature</div>
+          <h3>Soft Pink Charm</h3>
+          <p class="section-copy">Een zachte, romantische mix van kralen en glansdetails. Perfect voor een elegante daily bag.</p>
+          <div class="product-price">Vanaf €19</div>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Limited</div>
+          <h3>Golden Accent Charm</h3>
+          <p class="section-copy">Warm goud, subtiele sparkle en een luxe look. Voor wie iets bijzonders aan de tas wil hangen.</p>
+          <div class="product-price">Vanaf €24</div>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Custom</div>
+          <h3>Personalized Charm</h3>
+          <p class="section-copy">Kies kleuren, letters of sfeer. Giulia maakt ook charms op aanvraag, in jouw stijl.</p>
+          <div class="product-price">Op aanvraag</div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Waarom Giulia</div>
+      <h2 class="section-title">Zelfgemaakt, lokaal, met gevoel voor detail</h2>
+      <div class="features">
+        <article class="card">
+          <div class="eyebrow">01</div>
+          <h3>Handgemaakt in Amsterdam</h3>
+          <p class="section-copy">Geen massaproductie, maar aandacht. Elk stuk gaat door Giulia’s handen voordat het bij iemand aan een tas belandt.</p>
+        </article>
+        <article class="card">
+          <div class="eyebrow">02</div>
+          <h3>Uniek per charm</h3>
+          <p class="section-copy">Door kleine series en handwerk voelt geen enkele charm volledig generiek. Dat is precies de charme.</p>
+        </article>
+        <article class="card">
+          <div class="eyebrow">03</div>
+          <h3>Custom mogelijk</h3>
+          <p class="section-copy">Wil je een naam, kleurthema of specifieke vibe? Dan maakt Giulia iets dat echt bij jou past.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="over">
+      <div class="eyebrow">Over Giulia</div>
+      <div class="about">
+        <div class="photo" aria-hidden="true"></div>
+        <div class="card">
+          <h2 class="section-title">Van Amsterdam, met liefde gemaakt</h2>
+          <p class="section-copy">
+            Giulia maakt bag charms omdat accessoires meer mogen zijn dan praktisch. Ze mogen vrolijk zijn, persoonlijk voelen en iets vertellen over degene die ze draagt.
+          </p>
+          <p class="section-copy">
+            Vanuit Amsterdam ontwerpt en maakt ze charms in kleine oplages, met veel oog voor kleur, textuur en detail. Het resultaat: accessoires die je tas meteen meer eigen maken.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">Zo werkt het</div>
+      <h2 class="section-title">Simpel bestellen</h2>
+      <div class="steps">
+        <article class="card">
+          <div class="eyebrow">Stap 1</div>
+          <h3>Kies een stijl</h3>
+          <p class="section-copy">Ga voor een bestaande charm of stuur een idee door voor iets persoonlijks.</p>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Stap 2</div>
+          <h3>Bespreek de details</h3>
+          <p class="section-copy">Kleuren, letters, sfeer of afwerking — alles kan afgestemd worden.</p>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Stap 3</div>
+          <h3>Giulia maakt het</h3>
+          <p class="section-copy">Daarna gaat Giulia aan de slag en ontvang je een handmade charm met eigen karakter.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="bestellen">
+      <div class="eyebrow">Bestellen</div>
+      <div class="contact">
+        <div class="card">
+          <h2 class="section-title">Klaar voor een charm?</h2>
+          <p class="section-copy">
+            Neem contact op voor beschikbare ontwerpen, custom requests of samenwerkingen. Deze pagina is een eerste online etalage — klaar om uitgebreid te worden met echte productfoto’s, prijzen en een bestelknop.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:hello@giuliacharms.com">hello@giuliacharms.com</a>
+            <a class="btn btn-secondary" href="https://instagram.com/giuliacharms" target="_blank" rel="noreferrer">Instagram → @giuliacharms</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow">Snel overzicht</div>
+          <h3>Wat deze site al doet</h3>
+          <p class="tiny">✓ Heldere branding<br/>✓ Amsterdam handmade positioning<br/>✓ Collectie-overzicht<br/>✓ Contactsectie<br/>✓ Klaar voor echte foto’s en bestelinfo</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © <span id="year"></span> Giulia Charms · Handmade bag charms from Amsterdam
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
