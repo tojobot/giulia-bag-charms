@@ -1,0 +1,22 @@
+<svg width="640" height="220" viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gcOrb" x1="60" y1="40" x2="160" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4A6C1"/>
+      <stop offset="1" stop-color="#D68C4B"/>
+    </linearGradient>
+    <linearGradient id="gcSoft" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFF5F9"/>
+      <stop offset="1" stop-color="#FFF3E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="220" rx="32" fill="url(#gcSoft)"/>
+  <circle cx="110" cy="110" r="54" fill="url(#gcOrb)"/>
+  <path d="M110 56V96" stroke="white" stroke-width="10" stroke-linecap="round"/>
+  <path d="M84 92C84 77.64 95.64 66 110 66C124.36 66 136 77.64 136 92V100C136 114.36 124.36 126 110 126C95.64 126 84 114.36 84 100V92Z" stroke="white" stroke-width="10"/>
+  <circle cx="91" cy="145" r="11" fill="#FCE7F0"/>
+  <circle cx="110" cy="157" r="12" fill="#FFE7C5"/>
+  <circle cx="130" cy="145" r="10" fill="#F8D3E2"/>
+  <path d="M91 145C99 142 104 144 110 157C117 143 121 142 130 145" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <text x="205" y="104" fill="#2F2630" font-size="54" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" letter-spacing="-1.5">Giulia Charms</text>
+  <text x="208" y="138" fill="#8A7480" font-size="18" font-family="Inter, Arial, sans-serif" letter-spacing="2.5">SOFT LUXURY FOR YOUR BAG</text>
+</svg>

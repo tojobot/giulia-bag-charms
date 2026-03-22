@@ -1,0 +1,6 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://clerk.giuliacharms.com https://*.clerk.accounts.dev https://cdn.clerk.com https://cdn.jsdelivr.net https://app.posthog.com https://eu.i.posthog.com https://us.i.posthog.com; connect-src 'self' https://api.clerk.com https://*.clerk.accounts.dev https://clerk.giuliacharms.com https://app.posthog.com https://eu.i.posthog.com https://us.i.posthog.com https://api.stripe.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data: https:; frame-src https://js.stripe.com https://hooks.stripe.com https://*.clerk.accounts.dev https://clerk.giuliacharms.com; object-src 'none'; base-uri 'self'; form-action 'self' https://checkout.stripe.com;
